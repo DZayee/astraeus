@@ -28,7 +28,18 @@ This project implements a transferable account system using smart contracts.
    ```
    forge build
    ```
-
+forge build
+[⠊] Compiling...
+[⠒] Compiling 44 files with Solc 0.8.19
+[⠢] Solc 0.8.19 finished in 9.32s
+Error: 
+Compiler run failed:
+Error: Compiler error (/Users/distiller/project/libsolidity/codegen/LValue.cpp:56):Stack too deep. Try compiling with `--via-ir` (cli) or the equivalent `viaIR: true` (standard JSON) while enabling the optimizer. Otherwise, try removing local variables.
+CompilerError: Stack too deep. Try compiling with `--via-ir` (cli) or the equivalent `viaIR: true` (standard JSON) while enabling the optimizer. Otherwise, try removing local variables.
+   --> test/TransferableAccountStore.t.sol:241:57:
+    |
+241 |         (, address newOwner,,,, bool isAccountLocked) = tas.accountsStore(decodedTransferdAccountId);
+    |                                                         ^^^
 ## Getting Started
 
 This guide will help you set up the Astraeus API server on the Suave Toliman Testnet to easily use Transferable Accounts (TA). You will learn how to create, approve, and transfer TAs using the API server. Additionally, you will learn how to sign transactions on external chains using TAs.
